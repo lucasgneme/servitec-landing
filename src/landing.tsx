@@ -13,11 +13,28 @@ const Icons = {
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#00A3FF]"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" /><circle cx="12" cy="12" r="3" /></svg>
     ),
     Logo: () => (
-        <div className="w-8 h-8 rounded-full bg-[#00A3FF] flex flex-col items-center justify-center p-1.5 overflow-hidden">
-            <svg viewBox="0 0 100 100" className="w-full h-full text-white" fill="currentColor">
-                <polygon points="50,10 90,30 50,50 10,30" opacity="0.8" />
-                <polygon points="50,90 90,70 50,50" opacity="0.6" />
-                <polygon points="50,90 10,70 50,50" opacity="1" />
+        <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center p-1 overflow-hidden shadow-sm">
+            <svg viewBox="0 0 100 100" className="w-full h-full" fill="none">
+                {/* Smartphone body */}
+                <rect x="30" y="12" width="32" height="56" rx="4" ry="4" stroke="#00A3FF" strokeWidth="4" fill="#00A3FF" opacity="0.15" />
+                <rect x="30" y="12" width="32" height="56" rx="4" ry="4" stroke="#00A3FF" strokeWidth="4" fill="none" />
+                {/* Screen */}
+                <rect x="34" y="20" width="24" height="40" rx="1" fill="#00A3FF" opacity="0.25" />
+                {/* Home button */}
+                <circle cx="46" cy="64" r="2" fill="#00A3FF" />
+                {/* Wrench */}
+                <path d="M68 30 L78 20 Q82 16 86 20 L86 20 Q90 24 86 28 L76 38 L73 35 L83 25 Q84 24 83 23 L83 23 Q82 22 81 23 L71 33 Z" fill="#00A3FF" />
+                {/* Gear */}
+                <circle cx="22" cy="78" r="8" stroke="#00A3FF" strokeWidth="3" fill="none" />
+                <circle cx="22" cy="78" r="3" fill="#00A3FF" />
+                {/* Gear teeth */}
+                <line x1="22" y1="67" x2="22" y2="71" stroke="#00A3FF" strokeWidth="3" strokeLinecap="round" />
+                <line x1="22" y1="85" x2="22" y2="89" stroke="#00A3FF" strokeWidth="3" strokeLinecap="round" />
+                <line x1="13" y1="78" x2="11" y2="78" stroke="#00A3FF" strokeWidth="3" strokeLinecap="round" />
+                <line x1="31" y1="78" x2="33" y2="78" stroke="#00A3FF" strokeWidth="3" strokeLinecap="round" />
+                {/* Swoosh arc */}
+                <path d="M20 25 Q46 5 75 45" stroke="#00A3FF" strokeWidth="3" fill="none" strokeLinecap="round" />
+                <path d="M72 60 Q50 95 18 68" stroke="#00A3FF" strokeWidth="3" fill="none" strokeLinecap="round" />
             </svg>
         </div>
     ),
@@ -41,11 +58,11 @@ export const LandingPage = () => {
 
             {/* 1. NAVBAR */}
             <nav className="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto border-b border-transparent">
-                <div className="flex items-center gap-3">
-                    <Icons.Logo />
-                    <div>
-                        <div className="text-white font-bold tracking-widest text-lg leading-none mb-1">SERVITEC</div>
-                        <div className="text-[10px] text-slate-400 uppercase tracking-widest leading-none">Soluciones Informáticas</div>
+                <div className="flex items-center gap-4">
+                    <img src="/logo.png" alt="Servitec Logo" className="w-14 h-14 rounded-full object-cover bg-white p-0.5 shadow-[0_0_15px_rgba(0,163,255,0.3)]" />
+                    <div className="flex flex-col justify-center mt-1">
+                        <div className="text-white font-bold tracking-widest text-2xl leading-none mb-1.5" style={{ fontFamily: "'Michroma', sans-serif" }}>SERVITEC</div>
+                        <div className="text-[13px] text-slate-300 tracking-[0.15em] leading-none" style={{ fontFamily: "'PT Serif', serif" }}>Soluciones Informáticas</div>
                     </div>
                 </div>
                 <button onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })} className="hidden md:inline-block bg-[#00A3FF] hover:bg-blue-500 text-white px-5 py-2.5 rounded-md text-sm font-semibold transition shadow-lg shadow-blue-500/20">
@@ -261,7 +278,7 @@ export const LandingPage = () => {
                                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00A3FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
                                 </div>
                                 <div>
-                                    <p className="text-white font-semibold text-lg">24/7</p>
+                                    <p className="text-white font-semibold text-lg">Servicio Técnico 24/7</p>
                                 </div>
                             </div>
 
@@ -286,9 +303,12 @@ export const LandingPage = () => {
             <footer className="border-t border-slate-800/80 pt-16 pb-8 px-6 bg-[#090D15]">
                 <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 mb-16">
                     <div className="md:col-span-5 pr-8">
-                        <div className="flex items-center gap-3 mb-6">
-                            <Icons.Logo />
-                            <div className="text-white font-bold tracking-widest text-lg leading-none mt-1">SERVITEC</div>
+                        <div className="flex items-center gap-4 mb-6">
+                            <img src="/logo.png" alt="Servitec Logo" className="w-14 h-14 rounded-full object-cover bg-white p-0.5 shadow-[0_0_15px_rgba(0,163,255,0.3)]" />
+                            <div className="flex flex-col justify-center mt-1">
+                                <div className="text-white font-bold tracking-widest text-2xl leading-none mb-1.5" style={{ fontFamily: "'Michroma', sans-serif" }}>SERVITEC</div>
+                                <div className="text-[13px] text-slate-300 tracking-[0.15em] leading-none" style={{ fontFamily: "'PT Serif', serif" }}>Soluciones Informáticas</div>
+                            </div>
                         </div>
                         <p className="text-slate-400 text-sm mb-8 leading-relaxed max-w-sm">
                             Construyendo el futuro digital de empresas ambiciosas mediante ingeniería de software de clase mundial.
